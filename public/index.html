@@ -12,7 +12,19 @@
     </head>
     <body>
        <p>Welcome To Chat App.</p>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-       <script src="js/scripts.js"></script>
+
+
+       <script src="/socket.io/socket.io.js"></script>
+       <script> 
+        var socket = io();
+
+        socket.on('connect', () => {
+            console.log('Connected To The Server');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Disconnected From Server');
+        });
+       </script>
     </body>
 </html>
